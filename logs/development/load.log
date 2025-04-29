@@ -1,0 +1,278 @@
+2025-04-30 04:22:41,869 - load - INFO - Starting loading data to database.
+2025-04-30 04:22:41,869 - load - WARNING - No data to load.
+2025-04-30 04:24:24,982 - load - INFO - Starting loading data to database.
+2025-04-30 04:24:25,050 - load - ERROR - Loading data to database failed.
+2025-04-30 04:25:20,294 - load - INFO - Starting loading data to database.
+2025-04-30 04:25:20,341 - load - ERROR - Loading data to database failed: syntax error at or near ","
+LINE 2: ...     INSERT INTO newsapi (", a, u, t, h, o, r, ", ,,  , ", t...
+                                                             ^
+
+2025-04-30 04:37:19,311 - load - INFO - Starting to load data into the database.
+2025-04-30 04:37:19,313 - load - INFO - Connecting to the database.
+2025-04-30 04:37:19,355 - load - INFO - Executing the UPSERT query.
+2025-04-30 04:37:19,364 - load - ERROR - Database error occurred: relation "newsapi" does not exist
+LINE 2:         INSERT INTO newsapi ("author", "title", "description...
+                            ^
+
+2025-04-30 04:37:19,365 - load - INFO - Database operation completed.
+2025-04-30 04:50:51,986 - load - INFO - Starting to load data into the database.
+2025-04-30 04:50:51,988 - load - INFO - Connecting to the database.
+2025-04-30 04:50:52,137 - load - INFO - Executing the UPSERT query.
+2025-04-30 04:50:52,143 - load - ERROR - Database error occurred: column "source.id" of relation "newsapi" does not exist
+LINE 2: ...", "url", "urltoimage", "publishedat", "content", "source.id...
+                                                             ^
+
+2025-04-30 04:50:52,143 - load - INFO - Database operation completed.
+2025-04-30 04:53:28,315 - load - INFO - Starting to load data into the database.
+2025-04-30 04:53:28,316 - load - INFO - Connecting to the database.
+2025-04-30 04:53:28,358 - load - INFO - Executing the UPSERT query.
+2025-04-30 04:53:28,367 - load - ERROR - Database error occurred: value too long for type character varying(255)
+
+2025-04-30 04:53:28,368 - load - INFO - Database operation completed.
+2025-04-30 04:57:21,994 - load - INFO - Starting to load data into the database.
+2025-04-30 04:57:21,995 - load - INFO - Connecting to the database.
+2025-04-30 04:57:22,038 - load - INFO - Executing the UPSERT query.
+2025-04-30 04:57:22,047 - load - INFO - 100 rows successfully loaded into 'newsapi'.
+2025-04-30 04:57:22,047 - load - INFO - Database operation completed.
+2025-04-30 05:41:15,117 - load - INFO - Loading data into PostgreSQL table: {'user': 'postgres', 'pass': 'admin', 'host': 'localhost', 'port': '5432', 'name': 'etl_project'}
+2025-04-30 05:41:15,118 - load - ERROR - Error creating SQLAlchemy engine: 'password'
+Traceback (most recent call last):
+  File "D:\Projects\pipelines\NewsAPI\load.py", line 13, in get_engine
+    password=DB_CONFIG['password'],
+KeyError: 'password'
+2025-04-30 05:41:15,118 - load - ERROR - Failed to load data into {'user': 'postgres', 'pass': 'admin', 'host': 'localhost', 'port': '5432', 'name': 'etl_project'}: 'password'
+Traceback (most recent call last):
+  File "D:\Projects\pipelines\NewsAPI\load.py", line 45, in load_data_to_postgres
+    engine = get_engine()
+  File "D:\Projects\pipelines\NewsAPI\load.py", line 13, in get_engine
+    password=DB_CONFIG['password'],
+KeyError: 'password'
+2025-04-30 05:42:20,458 - load - INFO - Loading data into PostgreSQL table: {'user': 'postgres', 'pass': 'admin', 'host': 'localhost', 'port': '5432', 'name': 'etl_project'}
+2025-04-30 05:42:20,458 - load - ERROR - Error creating SQLAlchemy engine: create() got an unexpected keyword argument 'user'
+Traceback (most recent call last):
+  File "D:\Projects\pipelines\NewsAPI\load.py", line 10, in get_engine
+    db_url = URL.create(
+TypeError: create() got an unexpected keyword argument 'user'
+2025-04-30 05:42:20,459 - load - ERROR - Failed to load data into {'user': 'postgres', 'pass': 'admin', 'host': 'localhost', 'port': '5432', 'name': 'etl_project'}: create() got an unexpected keyword argument 'user'
+Traceback (most recent call last):
+  File "D:\Projects\pipelines\NewsAPI\load.py", line 45, in load_data_to_postgres
+    engine = get_engine()
+  File "D:\Projects\pipelines\NewsAPI\load.py", line 10, in get_engine
+    db_url = URL.create(
+TypeError: create() got an unexpected keyword argument 'user'
+2025-04-30 05:43:30,812 - load - INFO - Loading data into PostgreSQL table: {'user': 'postgres', 'pass': 'admin', 'host': 'localhost', 'port': '5432', 'name': 'etl_project'}
+2025-04-30 05:43:30,856 - load - INFO - PostgreSQL engine created successfully.
+2025-04-30 05:43:30,911 - load - ERROR - Error fetching existing keys: (psycopg2.errors.SyntaxError) syntax error at or near "{"
+LINE 1: SELECT url FROM {'user': 'postgres', 'pass': 'admin', 'host'...
+                        ^
+
+[SQL: SELECT url FROM {'user': 'postgres', 'pass': 'admin', 'host': 'localhost', 'port': '5432', 'name': 'etl_project'}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+Traceback (most recent call last):
+  File "D:\Projects\pipelines\NewsAPI\.venv\lib\site-packages\sqlalchemy\engine\base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+  File "D:\Projects\pipelines\NewsAPI\.venv\lib\site-packages\sqlalchemy\engine\default.py", line 945, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.SyntaxError: syntax error at or near "{"
+LINE 1: SELECT url FROM {'user': 'postgres', 'pass': 'admin', 'host'...
+                        ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Projects\pipelines\NewsAPI\load.py", line 29, in get_existing_keys
+    result = conn.execute(query)
+  File "D:\Projects\pipelines\NewsAPI\.venv\lib\site-packages\sqlalchemy\engine\base.py", line 1416, in execute
+    return meth(
+  File "D:\Projects\pipelines\NewsAPI\.venv\lib\site-packages\sqlalchemy\sql\elements.py", line 523, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "D:\Projects\pipelines\NewsAPI\.venv\lib\site-packages\sqlalchemy\engine\base.py", line 1638, in _execute_clauseelement
+    ret = self._execute_context(
+  File "D:\Projects\pipelines\NewsAPI\.venv\lib\site-packages\sqlalchemy\engine\base.py", line 1843, in _execute_context
+    return self._exec_single_context(
+  File "D:\Projects\pipelines\NewsAPI\.venv\lib\site-packages\sqlalchemy\engine\base.py", line 1983, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "D:\Projects\pipelines\NewsAPI\.venv\lib\site-packages\sqlalchemy\engine\base.py", line 2352, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "D:\Projects\pipelines\NewsAPI\.venv\lib\site-packages\sqlalchemy\engine\base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+  File "D:\Projects\pipelines\NewsAPI\.venv\lib\site-packages\sqlalchemy\engine\default.py", line 945, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.ProgrammingError: (psycopg2.errors.SyntaxError) syntax error at or near "{"
+LINE 1: SELECT url FROM {'user': 'postgres', 'pass': 'admin', 'host'...
+                        ^
+
+[SQL: SELECT url FROM {'user': 'postgres', 'pass': 'admin', 'host': 'localhost', 'port': '5432', 'name': 'etl_project'}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2025-04-30 05:43:30,915 - load - INFO - 100 new records after removing duplicates.
+2025-04-30 05:43:30,927 - load - ERROR - Failed to load data into {'user': 'postgres', 'pass': 'admin', 'host': 'localhost', 'port': '5432', 'name': 'etl_project'}: unhashable type: 'dict'
+Traceback (most recent call last):
+  File "D:\Projects\pipelines\NewsAPI\load.py", line 60, in load_data_to_postgres
+    df.to_sql(
+  File "D:\Projects\pipelines\NewsAPI\.venv\lib\site-packages\pandas\util\_decorators.py", line 333, in wrapper
+    return func(*args, **kwargs)
+  File "D:\Projects\pipelines\NewsAPI\.venv\lib\site-packages\pandas\core\generic.py", line 3087, in to_sql
+    return sql.to_sql(
+  File "D:\Projects\pipelines\NewsAPI\.venv\lib\site-packages\pandas\io\sql.py", line 842, in to_sql
+    return pandas_sql.to_sql(
+  File "D:\Projects\pipelines\NewsAPI\.venv\lib\site-packages\pandas\io\sql.py", line 2008, in to_sql
+    table = self.prep_table(
+  File "D:\Projects\pipelines\NewsAPI\.venv\lib\site-packages\pandas\io\sql.py", line 1902, in prep_table
+    table = SQLTable(
+  File "D:\Projects\pipelines\NewsAPI\.venv\lib\site-packages\pandas\io\sql.py", line 958, in __init__
+    self.table = self._create_table_setup()
+  File "D:\Projects\pipelines\NewsAPI\.venv\lib\site-packages\pandas\io\sql.py", line 1285, in _create_table_setup
+    return Table(self.name, meta, *columns, schema=schema)
+  File "<string>", line 2, in __new__
+  File "D:\Projects\pipelines\NewsAPI\.venv\lib\site-packages\sqlalchemy\util\deprecations.py", line 281, in warned
+    return fn(*args, **kwargs)  # type: ignore[no-any-return]
+  File "D:\Projects\pipelines\NewsAPI\.venv\lib\site-packages\sqlalchemy\sql\schema.py", line 430, in __new__
+    return cls._new(*args, **kw)
+  File "D:\Projects\pipelines\NewsAPI\.venv\lib\site-packages\sqlalchemy\sql\schema.py", line 460, in _new
+    if key in metadata.tables:
+TypeError: unhashable type: 'dict'
+2025-04-30 05:52:15,099 - load - INFO - Loading data into PostgreSQL table: {'user': 'postgres', 'pass': 'admin', 'host': 'localhost', 'port': '5432', 'name': 'etl_project'}
+2025-04-30 05:52:15,141 - load - INFO - PostgreSQL engine created successfully.
+2025-04-30 05:52:15,189 - load - ERROR - Error fetching existing keys: (psycopg2.errors.SyntaxError) syntax error at or near "{"
+LINE 1: SELECT url FROM {'user': 'postgres', 'pass': 'admin', 'host'...
+                        ^
+
+[SQL: SELECT url FROM {'user': 'postgres', 'pass': 'admin', 'host': 'localhost', 'port': '5432', 'name': 'etl_project'}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+Traceback (most recent call last):
+  File "D:\Projects\pipelines\NewsAPI\.venv\lib\site-packages\sqlalchemy\engine\base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+  File "D:\Projects\pipelines\NewsAPI\.venv\lib\site-packages\sqlalchemy\engine\default.py", line 945, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.SyntaxError: syntax error at or near "{"
+LINE 1: SELECT url FROM {'user': 'postgres', 'pass': 'admin', 'host'...
+                        ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Projects\pipelines\NewsAPI\load.py", line 31, in get_existing_keys
+    result = conn.execute(query)
+  File "D:\Projects\pipelines\NewsAPI\.venv\lib\site-packages\sqlalchemy\engine\base.py", line 1416, in execute
+    return meth(
+  File "D:\Projects\pipelines\NewsAPI\.venv\lib\site-packages\sqlalchemy\sql\elements.py", line 523, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "D:\Projects\pipelines\NewsAPI\.venv\lib\site-packages\sqlalchemy\engine\base.py", line 1638, in _execute_clauseelement
+    ret = self._execute_context(
+  File "D:\Projects\pipelines\NewsAPI\.venv\lib\site-packages\sqlalchemy\engine\base.py", line 1843, in _execute_context
+    return self._exec_single_context(
+  File "D:\Projects\pipelines\NewsAPI\.venv\lib\site-packages\sqlalchemy\engine\base.py", line 1983, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "D:\Projects\pipelines\NewsAPI\.venv\lib\site-packages\sqlalchemy\engine\base.py", line 2352, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "D:\Projects\pipelines\NewsAPI\.venv\lib\site-packages\sqlalchemy\engine\base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+  File "D:\Projects\pipelines\NewsAPI\.venv\lib\site-packages\sqlalchemy\engine\default.py", line 945, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.ProgrammingError: (psycopg2.errors.SyntaxError) syntax error at or near "{"
+LINE 1: SELECT url FROM {'user': 'postgres', 'pass': 'admin', 'host'...
+                        ^
+
+[SQL: SELECT url FROM {'user': 'postgres', 'pass': 'admin', 'host': 'localhost', 'port': '5432', 'name': 'etl_project'}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2025-04-30 05:52:15,192 - load - INFO - 100 new records after removing duplicates.
+2025-04-30 05:52:15,197 - load - ERROR - Failed to load data into {'user': 'postgres', 'pass': 'admin', 'host': 'localhost', 'port': '5432', 'name': 'etl_project'}: unhashable type: 'dict'
+Traceback (most recent call last):
+  File "D:\Projects\pipelines\NewsAPI\load.py", line 64, in load_data_to_postgres
+    df.to_sql(
+  File "D:\Projects\pipelines\NewsAPI\.venv\lib\site-packages\pandas\util\_decorators.py", line 333, in wrapper
+    return func(*args, **kwargs)
+  File "D:\Projects\pipelines\NewsAPI\.venv\lib\site-packages\pandas\core\generic.py", line 3087, in to_sql
+    return sql.to_sql(
+  File "D:\Projects\pipelines\NewsAPI\.venv\lib\site-packages\pandas\io\sql.py", line 842, in to_sql
+    return pandas_sql.to_sql(
+  File "D:\Projects\pipelines\NewsAPI\.venv\lib\site-packages\pandas\io\sql.py", line 2008, in to_sql
+    table = self.prep_table(
+  File "D:\Projects\pipelines\NewsAPI\.venv\lib\site-packages\pandas\io\sql.py", line 1902, in prep_table
+    table = SQLTable(
+  File "D:\Projects\pipelines\NewsAPI\.venv\lib\site-packages\pandas\io\sql.py", line 958, in __init__
+    self.table = self._create_table_setup()
+  File "D:\Projects\pipelines\NewsAPI\.venv\lib\site-packages\pandas\io\sql.py", line 1285, in _create_table_setup
+    return Table(self.name, meta, *columns, schema=schema)
+  File "<string>", line 2, in __new__
+  File "D:\Projects\pipelines\NewsAPI\.venv\lib\site-packages\sqlalchemy\util\deprecations.py", line 281, in warned
+    return fn(*args, **kwargs)  # type: ignore[no-any-return]
+  File "D:\Projects\pipelines\NewsAPI\.venv\lib\site-packages\sqlalchemy\sql\schema.py", line 430, in __new__
+    return cls._new(*args, **kw)
+  File "D:\Projects\pipelines\NewsAPI\.venv\lib\site-packages\sqlalchemy\sql\schema.py", line 460, in _new
+    if key in metadata.tables:
+TypeError: unhashable type: 'dict'
+2025-04-30 05:52:51,556 - load - INFO - Loading data into PostgreSQL table: {'user': 'postgres', 'pass': 'admin', 'host': 'localhost', 'port': '5432', 'name': 'etl_project'}
+2025-04-30 05:52:51,599 - load - INFO - PostgreSQL engine created successfully.
+2025-04-30 05:52:51,646 - load - ERROR - Error fetching existing keys: (psycopg2.errors.SyntaxError) syntax error at or near "{"
+LINE 1: SELECT url FROM {'user': 'postgres', 'pass': 'admin', 'host'...
+                        ^
+
+[SQL: SELECT url FROM {'user': 'postgres', 'pass': 'admin', 'host': 'localhost', 'port': '5432', 'name': 'etl_project'}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+Traceback (most recent call last):
+  File "D:\Projects\pipelines\NewsAPI\.venv\lib\site-packages\sqlalchemy\engine\base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+  File "D:\Projects\pipelines\NewsAPI\.venv\lib\site-packages\sqlalchemy\engine\default.py", line 945, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.SyntaxError: syntax error at or near "{"
+LINE 1: SELECT url FROM {'user': 'postgres', 'pass': 'admin', 'host'...
+                        ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Projects\pipelines\NewsAPI\load.py", line 31, in get_existing_keys
+    result = conn.execute(query)
+  File "D:\Projects\pipelines\NewsAPI\.venv\lib\site-packages\sqlalchemy\engine\base.py", line 1416, in execute
+    return meth(
+  File "D:\Projects\pipelines\NewsAPI\.venv\lib\site-packages\sqlalchemy\sql\elements.py", line 523, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "D:\Projects\pipelines\NewsAPI\.venv\lib\site-packages\sqlalchemy\engine\base.py", line 1638, in _execute_clauseelement
+    ret = self._execute_context(
+  File "D:\Projects\pipelines\NewsAPI\.venv\lib\site-packages\sqlalchemy\engine\base.py", line 1843, in _execute_context
+    return self._exec_single_context(
+  File "D:\Projects\pipelines\NewsAPI\.venv\lib\site-packages\sqlalchemy\engine\base.py", line 1983, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "D:\Projects\pipelines\NewsAPI\.venv\lib\site-packages\sqlalchemy\engine\base.py", line 2352, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "D:\Projects\pipelines\NewsAPI\.venv\lib\site-packages\sqlalchemy\engine\base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+  File "D:\Projects\pipelines\NewsAPI\.venv\lib\site-packages\sqlalchemy\engine\default.py", line 945, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.ProgrammingError: (psycopg2.errors.SyntaxError) syntax error at or near "{"
+LINE 1: SELECT url FROM {'user': 'postgres', 'pass': 'admin', 'host'...
+                        ^
+
+[SQL: SELECT url FROM {'user': 'postgres', 'pass': 'admin', 'host': 'localhost', 'port': '5432', 'name': 'etl_project'}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2025-04-30 05:52:51,649 - load - INFO - 100 new records after removing duplicates.
+2025-04-30 05:52:51,654 - load - ERROR - Failed to load data into {'user': 'postgres', 'pass': 'admin', 'host': 'localhost', 'port': '5432', 'name': 'etl_project'}: unhashable type: 'dict'
+Traceback (most recent call last):
+  File "D:\Projects\pipelines\NewsAPI\load.py", line 64, in load_data_to_postgres
+    df.to_sql(
+  File "D:\Projects\pipelines\NewsAPI\.venv\lib\site-packages\pandas\util\_decorators.py", line 333, in wrapper
+    return func(*args, **kwargs)
+  File "D:\Projects\pipelines\NewsAPI\.venv\lib\site-packages\pandas\core\generic.py", line 3087, in to_sql
+    return sql.to_sql(
+  File "D:\Projects\pipelines\NewsAPI\.venv\lib\site-packages\pandas\io\sql.py", line 842, in to_sql
+    return pandas_sql.to_sql(
+  File "D:\Projects\pipelines\NewsAPI\.venv\lib\site-packages\pandas\io\sql.py", line 2008, in to_sql
+    table = self.prep_table(
+  File "D:\Projects\pipelines\NewsAPI\.venv\lib\site-packages\pandas\io\sql.py", line 1902, in prep_table
+    table = SQLTable(
+  File "D:\Projects\pipelines\NewsAPI\.venv\lib\site-packages\pandas\io\sql.py", line 958, in __init__
+    self.table = self._create_table_setup()
+  File "D:\Projects\pipelines\NewsAPI\.venv\lib\site-packages\pandas\io\sql.py", line 1285, in _create_table_setup
+    return Table(self.name, meta, *columns, schema=schema)
+  File "<string>", line 2, in __new__
+  File "D:\Projects\pipelines\NewsAPI\.venv\lib\site-packages\sqlalchemy\util\deprecations.py", line 281, in warned
+    return fn(*args, **kwargs)  # type: ignore[no-any-return]
+  File "D:\Projects\pipelines\NewsAPI\.venv\lib\site-packages\sqlalchemy\sql\schema.py", line 430, in __new__
+    return cls._new(*args, **kw)
+  File "D:\Projects\pipelines\NewsAPI\.venv\lib\site-packages\sqlalchemy\sql\schema.py", line 460, in _new
+    if key in metadata.tables:
+TypeError: unhashable type: 'dict'

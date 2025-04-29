@@ -1,7 +1,125 @@
-2025-04-29 16:58:28,904 - __main__ - INFO - Data extraction completed successfully.
-2025-04-29 16:59:27,614 - __main__ - INFO - Data extraction started.
-2025-04-29 16:59:29,446 - __main__ - INFO - Data extraction completed successfully.
-2025-04-29 17:03:20,341 - __main__ - INFO - Data extraction started.
-2025-04-29 17:03:22,224 - __main__ - INFO - Data extraction completed successfully.
-2025-04-29 17:15:46,656 - __main__ - INFO - Data extraction started.
-2025-04-29 17:15:47,730 - __main__ - INFO - Data extraction completed successfully.
+
+2025-04-30 01:54:27,803 - __main__ - INFO - Pipeline started running.
+2025-04-30 01:54:28,460 - __main__ - ERROR - Problem occured while running pipeline
+Traceback (most recent call last):
+  File "D:\Projects\pipelines\NewsAPI\main.py", line 13, in run_etl
+    print(cleaned_data['publisheddate'].dtype)
+TypeError: 'NoneType' object is not subscriptable
+2025-04-30 01:54:40,655 - __main__ - INFO - Pipeline started running.
+2025-04-30 01:54:41,176 - __main__ - ERROR - Problem occured while running pipeline
+Traceback (most recent call last):
+  File "D:\Projects\pipelines\NewsAPI\main.py", line 13, in run_etl
+    print(cleaned_data['publisheddate'].dtype())
+TypeError: 'NoneType' object is not subscriptable
+2025-04-30 01:55:35,301 - __main__ - INFO - Pipeline started running.
+2025-04-30 01:55:37,124 - __main__ - ERROR - Problem occured while running pipeline
+Traceback (most recent call last):
+  File "D:\Projects\pipelines\NewsAPI\.venv\lib\site-packages\pandas\core\indexes\base.py", line 3805, in get_loc
+    return self._engine.get_loc(casted_key)
+  File "index.pyx", line 167, in pandas._libs.index.IndexEngine.get_loc
+  File "index.pyx", line 196, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\\_libs\\hashtable_class_helper.pxi", line 7081, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas\\_libs\\hashtable_class_helper.pxi", line 7089, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'publisheddate'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Projects\pipelines\NewsAPI\main.py", line 13, in run_etl
+    print(cleaned_data['publisheddate'].dtype)
+  File "D:\Projects\pipelines\NewsAPI\.venv\lib\site-packages\pandas\core\frame.py", line 4102, in __getitem__
+    indexer = self.columns.get_loc(key)
+  File "D:\Projects\pipelines\NewsAPI\.venv\lib\site-packages\pandas\core\indexes\base.py", line 3812, in get_loc
+    raise KeyError(key) from err
+KeyError: 'publisheddate'
+2025-04-30 01:56:13,043 - __main__ - INFO - Pipeline started running.
+2025-04-30 01:56:31,604 - __main__ - INFO - Pipeline started running.
+2025-04-30 04:18:49,286 - __main__ - INFO - Pipeline started running.
+2025-04-30 04:18:51,224 - __main__ - ERROR - Problem occured while running pipeline
+Traceback (most recent call last):
+  File "D:\Projects\pipelines\NewsAPI\main.py", line 13, in run_etl
+    cleaned_data = transform_data(raw_data)
+  File "D:\Projects\pipelines\NewsAPI\transform.py", line 9, in transform_data
+    if raw_data.empty:
+AttributeError: 'list' object has no attribute 'empty'
+2025-04-30 04:20:52,576 - __main__ - INFO - Pipeline started running.
+2025-04-30 04:20:54,415 - __main__ - ERROR - Problem occured while running pipeline: 'list' object has no attribute 'empty'
+Traceback (most recent call last):
+  File "D:\Projects\pipelines\NewsAPI\main.py", line 13, in run_etl
+    cleaned_data = transform_data(raw_data)
+  File "D:\Projects\pipelines\NewsAPI\transform.py", line 9, in transform_data
+    if raw_data.empty:
+AttributeError: 'list' object has no attribute 'empty'
+2025-04-30 04:21:20,652 - __main__ - INFO - Pipeline started running.
+2025-04-30 04:21:22,561 - __main__ - ERROR - Problem occured while running pipeline: load_data() missing 1 required positional argument: 'DB_CONFIG'
+Traceback (most recent call last):
+  File "D:\Projects\pipelines\NewsAPI\main.py", line 14, in run_etl
+    load_data(cleaned_data)
+TypeError: load_data() missing 1 required positional argument: 'DB_CONFIG'
+2025-04-30 04:22:40,051 - __main__ - INFO - Pipeline started running.
+2025-04-30 04:24:23,054 - __main__ - INFO - Pipeline started running.
+2025-04-30 04:25:18,367 - __main__ - INFO - Pipeline started running.
+2025-04-30 04:37:17,336 - __main__ - INFO - Pipeline started running.
+2025-04-30 04:37:19,365 - __main__ - ERROR - Problem occured while running pipeline: connection already closed
+Traceback (most recent call last):
+  File "D:\Projects\pipelines\NewsAPI\load.py", line 41, in load_data
+    execute_values(cur, insert_query, insert_values)
+  File "D:\Projects\pipelines\NewsAPI\.venv\lib\site-packages\psycopg2\extras.py", line 1299, in execute_values
+    cur.execute(b''.join(parts))
+psycopg2.errors.UndefinedTable: relation "newsapi" does not exist
+LINE 2:         INSERT INTO newsapi ("author", "title", "description...
+                            ^
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Projects\pipelines\NewsAPI\main.py", line 14, in run_etl
+    load_data(cleaned_data, DB_CONFIG)
+  File "D:\Projects\pipelines\NewsAPI\load.py", line 48, in load_data
+    conn.rollback()
+psycopg2.InterfaceError: connection already closed
+2025-04-30 04:50:49,969 - __main__ - INFO - Pipeline started running.
+2025-04-30 04:50:52,143 - __main__ - ERROR - Problem occured while running pipeline: connection already closed
+Traceback (most recent call last):
+  File "D:\Projects\pipelines\NewsAPI\load.py", line 41, in load_data
+    execute_values(cur, insert_query, insert_values)
+  File "D:\Projects\pipelines\NewsAPI\.venv\lib\site-packages\psycopg2\extras.py", line 1299, in execute_values
+    cur.execute(b''.join(parts))
+psycopg2.errors.UndefinedColumn: column "source.id" of relation "newsapi" does not exist
+LINE 2: ...", "url", "urltoimage", "publishedat", "content", "source.id...
+                                                             ^
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Projects\pipelines\NewsAPI\main.py", line 14, in run_etl
+    load_data(cleaned_data, DB_CONFIG)
+  File "D:\Projects\pipelines\NewsAPI\load.py", line 48, in load_data
+    conn.rollback()
+psycopg2.InterfaceError: connection already closed
+2025-04-30 04:53:26,344 - __main__ - INFO - Pipeline started running.
+2025-04-30 04:53:28,368 - __main__ - ERROR - Problem occured while running pipeline: connection already closed
+Traceback (most recent call last):
+  File "D:\Projects\pipelines\NewsAPI\load.py", line 41, in load_data
+    execute_values(cur, insert_query, insert_values)
+  File "D:\Projects\pipelines\NewsAPI\.venv\lib\site-packages\psycopg2\extras.py", line 1299, in execute_values
+    cur.execute(b''.join(parts))
+psycopg2.errors.StringDataRightTruncation: value too long for type character varying(255)
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Projects\pipelines\NewsAPI\main.py", line 14, in run_etl
+    load_data(cleaned_data, DB_CONFIG)
+  File "D:\Projects\pipelines\NewsAPI\load.py", line 48, in load_data
+    conn.rollback()
+psycopg2.InterfaceError: connection already closed
+2025-04-30 04:57:20,076 - __main__ - INFO - Pipeline started running.
+2025-04-30 05:41:13,198 - __main__ - INFO - Pipeline started running.
+2025-04-30 05:42:18,528 - __main__ - INFO - Pipeline started running.
+2025-04-30 05:43:29,008 - __main__ - INFO - Pipeline started running.
+2025-04-30 05:52:13,101 - __main__ - INFO - Pipeline started running.
+2025-04-30 05:52:50,562 - __main__ - INFO - Pipeline started running.
