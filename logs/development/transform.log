@@ -138,3 +138,13 @@ KeyError: 'publisheddate'
 2025-04-30 05:52:15,098 - transform - INFO - Data transformation finished successfully.
 2025-04-30 05:52:51,549 - transform - INFO - Data transformation started.
 2025-04-30 05:52:51,556 - transform - INFO - Data transformation finished successfully.
+2025-04-30 17:46:10,041 - transform - INFO - Data transformation started.
+2025-04-30 17:46:10,060 - transform - INFO - Data transformation finished successfully.
+2025-04-30 17:46:49,489 - transform - INFO - Data transformation started.
+2025-04-30 17:46:49,497 - transform - INFO - Data transformation finished successfully.
+2025-04-30 17:47:45,643 - transform - INFO - Data transformation started.
+2025-04-30 17:47:45,651 - transform - INFO - Data transformation finished successfully.
+2025-04-30 17:53:52,678 - transform - INFO - Data transformation started.
+2025-04-30 17:53:52,687 - transform - INFO - Data transformation finished successfully.
+2025-04-30 17:56:56,782 - transform - INFO - Data transformation started.
+2025-04-30 17:56:56,789 - transform - INFO - Data transformation finished successfully.
