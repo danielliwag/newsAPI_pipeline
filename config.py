@@ -3,7 +3,7 @@ import os
 
 load_dotenv()
 
-API_URL = 'https://newsapi.org/v2/everything'
+API_URL = 'https://newsapi.org/v2/top-headlines'
 API_KEY = os.getenv('api_key')
 
 DB_CONFIG = {
