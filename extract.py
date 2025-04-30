@@ -10,7 +10,7 @@ def extract_data(url,params=None):
     logger.info('Data extraction started.')
 
     if params is None:
-        params = {'q':'conclave', 'apiKey': API_KEY}
+        params = {'country':'us', 'apiKey': API_KEY}
 
     try:
         res = requests.get(url, params=params)
